@@ -1,0 +1,22 @@
+{
+  "radiobuttonsApp": {
+    "chooser": {
+      "home": {
+        "title": "Choosers",
+        "createLabel": "Chooser erstellen",
+        "createOrEditLabel": "Chooser erstellen oder bearbeiten",
+        "notFound": "No Choosers found"
+      },
+      "created": "Chooser erstellt mit ID {{ param }}",
+      "updated": "Chooser aktualisiert mit ID {{ param }}",
+      "deleted": "Chooser gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Chooser {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Chooser"
+      },
+      "enumeration": "Enumeration"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router, ActivatedRouteSnapshot, NavigationEnd, NavigationError } from '@angular/router';
+import { ActivatedRouteSnapshot, NavigationEnd, NavigationError, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 import { AccountService } from 'app/core/auth/account.service';
 
@@ -9,7 +10,12 @@ import { AccountService } from 'app/core/auth/account.service';
   templateUrl: './main.component.html'
 })
 export class MainComponent implements OnInit {
-  constructor(private accountService: AccountService, private titleService: Title, private router: Router) {}
+  constructor(
+    private accountService: AccountService,
+    private translateService: TranslateService,
+    private titleService: Title,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     // try to log in automatically
@@ -23,6 +29,8 @@ export class MainComponent implements OnInit {
         this.router.navigate(['/404']);
       }
     });
+
+    this.translateService.onLangChange.subscribe(() => this.updateTitle());
   }
 
   private getPageTitle(routeSnapshot: ActivatedRouteSnapshot): string {
@@ -36,8 +44,8 @@ export class MainComponent implements OnInit {
   private updateTitle(): void {
     let pageTitle = this.getPageTitle(this.router.routerState.snapshot.root);
     if (!pageTitle) {
-      pageTitle = 'Radiobutton_test';
+      pageTitle = 'global.title';
     }
-    this.titleService.setTitle(pageTitle);
+    this.translateService.get(pageTitle).subscribe(title => this.titleService.setTitle(title));
   }
 }

@@ -1,10 +1,10 @@
-import { ComponentFixture, TestBed, async, inject, fakeAsync, tick } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from '@angular/core/testing';
 import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { RadiobuttonTestTestModule } from '../../../test.module';
+import { RadiobuttonsTestModule } from '../../../test.module';
 import { UserManagementUpdateComponent } from 'app/admin/user-management/user-management-update.component';
 import { UserService } from 'app/core/user/user.service';
 import { User } from 'app/core/user/user.model';
@@ -20,7 +20,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [RadiobuttonTestTestModule],
+        imports: [RadiobuttonsTestModule],
         declarations: [UserManagementUpdateComponent],
         providers: [
           FormBuilder,

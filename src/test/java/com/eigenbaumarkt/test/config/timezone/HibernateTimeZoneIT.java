@@ -1,6 +1,6 @@
 package com.eigenbaumarkt.test.config.timezone;
 
-import com.eigenbaumarkt.test.RadiobuttonTestApp;
+import com.eigenbaumarkt.test.RadiobuttonsApp;
 import com.eigenbaumarkt.test.repository.timezone.DateTimeWrapper;
 import com.eigenbaumarkt.test.repository.timezone.DateTimeWrapperRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for the UTC Hibernate configuration.
  */
-@SpringBootTest(classes = RadiobuttonTestApp.class)
+@SpringBootTest(classes = RadiobuttonsApp.class)
 public class HibernateTimeZoneIT {
 
     @Autowired

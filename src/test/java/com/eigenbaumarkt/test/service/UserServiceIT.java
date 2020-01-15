@@ -1,13 +1,11 @@
 package com.eigenbaumarkt.test.service;
 
-import com.eigenbaumarkt.test.RadiobuttonTestApp;
+import com.eigenbaumarkt.test.RadiobuttonsApp;
 import com.eigenbaumarkt.test.config.Constants;
 import com.eigenbaumarkt.test.domain.User;
 import com.eigenbaumarkt.test.repository.UserRepository;
 import com.eigenbaumarkt.test.service.dto.UserDTO;
-
 import io.github.jhipster.security.RandomUtil;
-
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,10 +19,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.time.LocalDateTime;
-import java.util.Optional;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -32,7 +30,7 @@ import static org.mockito.Mockito.when;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = RadiobuttonTestApp.class)
+@SpringBootTest(classes = RadiobuttonsApp.class)
 @Transactional
 public class UserServiceIT {
 

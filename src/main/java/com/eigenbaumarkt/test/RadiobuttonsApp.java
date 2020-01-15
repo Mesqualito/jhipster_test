@@ -1,10 +1,8 @@
 package com.eigenbaumarkt.test;
 
 import com.eigenbaumarkt.test.config.ApplicationProperties;
-
 import io.github.jhipster.config.DefaultProfileUtil;
 import io.github.jhipster.config.JHipsterConstants;
-
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,18 +20,18 @@ import java.util.Collection;
 
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
-public class RadiobuttonTestApp implements InitializingBean {
+public class RadiobuttonsApp implements InitializingBean {
 
-    private static final Logger log = LoggerFactory.getLogger(RadiobuttonTestApp.class);
+    private static final Logger log = LoggerFactory.getLogger(RadiobuttonsApp.class);
 
     private final Environment env;
 
-    public RadiobuttonTestApp(Environment env) {
+    public RadiobuttonsApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes radiobutton_test.
+     * Initializes radiobuttons.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -58,7 +56,7 @@ public class RadiobuttonTestApp implements InitializingBean {
      * @param args the command line arguments.
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(RadiobuttonTestApp.class);
+        SpringApplication app = new SpringApplication(RadiobuttonsApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);

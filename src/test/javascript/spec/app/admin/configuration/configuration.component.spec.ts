@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
-import { RadiobuttonTestTestModule } from '../../../test.module';
+import { RadiobuttonsTestModule } from '../../../test.module';
 import { ConfigurationComponent } from 'app/admin/configuration/configuration.component';
-import { ConfigurationService, Bean, PropertySource } from 'app/admin/configuration/configuration.service';
+import { Bean, ConfigurationService, PropertySource } from 'app/admin/configuration/configuration.service';
 
 describe('Component Tests', () => {
   describe('ConfigurationComponent', () => {
@@ -13,7 +13,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [RadiobuttonTestTestModule],
+        imports: [RadiobuttonsTestModule],
         declarations: [ConfigurationComponent],
         providers: [ConfigurationService]
       })

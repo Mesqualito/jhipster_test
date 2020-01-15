@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { advanceTo } from 'jest-date-mock';
 
-import { RadiobuttonTestTestModule } from '../../../test.module';
+import { RadiobuttonsTestModule } from '../../../test.module';
 import { AuditsComponent } from 'app/admin/audits/audits.component';
 import { AuditsService } from 'app/admin/audits/audits.service';
 import { Audit } from 'app/admin/audits/audit.model';
@@ -39,7 +39,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [RadiobuttonTestTestModule],
+        imports: [RadiobuttonsTestModule],
         declarations: [AuditsComponent],
         providers: [AuditsService]
       })

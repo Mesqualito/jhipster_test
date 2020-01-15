@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
-import { throwError, of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
-import { RadiobuttonTestTestModule } from '../../../test.module';
+import { RadiobuttonsTestModule } from '../../../test.module';
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/user/account.model';
 import { SettingsComponent } from 'app/account/settings/settings.component';
@@ -18,7 +18,7 @@ describe('Component Tests', () => {
       lastName: 'Doe',
       activated: true,
       email: 'john.doe@mail.com',
-      langKey: 'en',
+      langKey: 'de',
       login: 'john',
       authorities: [],
       imageUrl: ''
@@ -26,7 +26,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [RadiobuttonTestTestModule],
+        imports: [RadiobuttonsTestModule],
         declarations: [SettingsComponent],
         providers: [FormBuilder]
       })
@@ -47,7 +47,8 @@ describe('Component Tests', () => {
       const settingsFormValues = {
         firstName: 'John',
         lastName: 'Doe',
-        email: 'john.doe@mail.com'
+        email: 'john.doe@mail.com',
+        langKey: 'de'
       };
 
       // WHEN

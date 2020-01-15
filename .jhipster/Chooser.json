@@ -1,0 +1,21 @@
+{
+    "name": "Chooser",
+    "fields": [
+        {
+            "fieldName": "enumeration",
+            "fieldType": "Enums",
+            "fieldValues": "A,B,C,D,E"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200115183805",
+    "entityTableName": "chooser",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

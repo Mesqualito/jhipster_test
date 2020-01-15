@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 /* jhipster-needle-add-admin-module-import - JHipster will add admin modules imports here */
 
 @NgModule({
@@ -10,7 +11,7 @@ import { RouterModule } from '@angular/router';
         path: 'user-management',
         loadChildren: () => import('./user-management/user-management.module').then(m => m.UserManagementModule),
         data: {
-          pageTitle: 'Users'
+          pageTitle: 'userManagement.home.title'
         }
       },
       {

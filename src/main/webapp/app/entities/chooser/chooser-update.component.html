@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-chooser-heading" jhiTranslate="radiobuttonsApp.chooser.home.createOrEditLabel">Create or edit a Chooser</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+<!--
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="radiobuttonsApp.chooser.enumeration" for="field_enumeration">Enumeration</label>
+                    <select class="form-control" name="enumeration" formControlName="enumeration" id="field_enumeration">
+                        <option value="A">{{'radiobuttonsApp.Enums.A' | translate}}</option>
+                        <option value="B">{{'radiobuttonsApp.Enums.B' | translate}}</option>
+                        <option value="C">{{'radiobuttonsApp.Enums.C' | translate}}</option>
+                        <option value="D">{{'radiobuttonsApp.Enums.D' | translate}}</option>
+                        <option value="E">{{'radiobuttonsApp.Enums.E' | translate}}</option>
+                    </select>
+                </div>
+    -->
+                <div class="form-group">
+                       <label class="form-control-label" jhiTranslate="radiobuttonsApp.chooser.enumeration" for="field_enumeration">Enumeration</label>
+                       <fieldset class="form-control" name="field_enumeration" id="field_enumeration">
+                           <input type="radio" value="A" formControlName="enumeration">{{'radiobuttonsApp.Enums.A' | translate}}</input>
+                           <input type="radio" value="B" formControlName="enumeration">{{'radiobuttonsApp.Enums.B' | translate}}</input>
+                           <input type="radio" value="C" formControlName="enumeration">{{'radiobuttonsApp.Enums.C' | translate}}</input>
+                           <input type="radio" value="D" formControlName="enumeration">{{'radiobuttonsApp.Enums.D' | translate}}</input>
+                           <input type="radio" value="E" formControlName="enumeration">{{'radiobuttonsApp.Enums.E' | translate}}</input>
+                       </fieldset>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

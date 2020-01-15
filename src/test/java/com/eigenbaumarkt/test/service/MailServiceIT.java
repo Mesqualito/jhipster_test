@@ -1,8 +1,7 @@
 package com.eigenbaumarkt.test.service;
 
+import com.eigenbaumarkt.test.RadiobuttonsApp;
 import com.eigenbaumarkt.test.config.Constants;
-
-import com.eigenbaumarkt.test.RadiobuttonTestApp;
 import com.eigenbaumarkt.test.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,17 +32,20 @@ import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 /**
  * Integration tests for {@link MailService}.
  */
-@SpringBootTest(classes = RadiobuttonTestApp.class)
+@SpringBootTest(classes = RadiobuttonsApp.class)
 public class MailServiceIT {
 
-    private static String[] languages = {
+    private static String languages[] = {
+        "de",
+        "en"
         // jhipster-needle-i18n-language-constant - JHipster will add/remove languages in this array
     };
     private static final Pattern PATTERN_LOCALE_3 = Pattern.compile("([a-z]{2})-([a-zA-Z]{4})-([a-z]{2})");

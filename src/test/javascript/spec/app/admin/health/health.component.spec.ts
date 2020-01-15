@@ -1,10 +1,10 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpErrorResponse } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
 
-import { RadiobuttonTestTestModule } from '../../../test.module';
+import { RadiobuttonsTestModule } from '../../../test.module';
 import { HealthComponent } from 'app/admin/health/health.component';
-import { HealthService, Health } from 'app/admin/health/health.service';
+import { Health, HealthService } from 'app/admin/health/health.service';
 
 describe('Component Tests', () => {
   describe('HealthComponent', () => {
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [RadiobuttonTestTestModule],
+        imports: [RadiobuttonsTestModule],
         declarations: [HealthComponent]
       })
         .overrideTemplate(HealthComponent, '')

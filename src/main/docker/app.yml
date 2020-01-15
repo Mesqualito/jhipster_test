@@ -1,16 +1,16 @@
 version: '2'
 services:
-  radiobutton_test-app:
-    image: radiobutton_test
+  radiobuttons-app:
+    image: radiobuttons
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,swagger
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://radiobutton_test-postgresql:5432/radiobutton_test
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://radiobuttons-postgresql:5432/radiobuttons
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
     ports:
       - 8080:8080
-  radiobutton_test-postgresql:
+  radiobuttons-postgresql:
     extends:
       file: postgresql.yml
-      service: radiobutton_test-postgresql
+      service: radiobuttons-postgresql

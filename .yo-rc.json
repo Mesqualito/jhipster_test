@@ -1,11 +1,12 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.eigenbaumarkt.test"
+      "packageName": "com.eigenbaumarkt.test",
+      "nativeLanguage": "de"
     },
     "jhipsterVersion": "6.6.0",
     "applicationType": "monolith",
-    "baseName": "radiobutton_test",
+    "baseName": "radiobuttons",
     "packageName": "com.eigenbaumarkt.test",
     "packageFolder": "com/eigenbaumarkt/test",
     "serverPort": "8080",
@@ -21,20 +22,22 @@
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "ZDJiOGVlZmUwZjA3OTdmNDA5MThiOWIwYzAyMDVmZjYwYWY2YmFhNmVkMWE2NWU5ODQ1ZjMzM2UxZjljOTBlNThhNjg0ZTI0NGUzZjVlYjRkNjMyMDI5ZjdkNmMzOTgwZWM1OTAzNmRjYzE4ZGNjZmUyOWQ4MmI0ZmQ0MTk4MzY=",
+    "jwtSecretKey": "YTk4ZDM1MTMzZjZlZWEzNjVhNWIyYjRiOGJlZGQxNTBmMzMwNGI4YjRkMTRkYTZlODNmNDg0MjE1NWQzOGNkNzA0OGE1YjI1NDIzNmIyOWVjMjhhYjRlMDQ0MWMzOGZjYTExNjNiZTIyMzlhNTQxYTIzYmNlMzc2Y2EzNjBhMTE=",
     "embeddableLaunchScript": false,
     "useSass": true,
     "clientPackageManager": "npm",
     "clientFramework": "angularX",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "creationTimestamp": 1579109170903,
+    "creationTimestamp": 1579113413641,
     "testFrameworks": [],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
-    "enableTranslation": false,
+    "enableTranslation": true,
+    "nativeLanguage": "de",
+    "languages": ["de", "en"],
     "blueprints": []
   }
 }

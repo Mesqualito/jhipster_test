@@ -1,6 +1,6 @@
 package com.eigenbaumarkt.test.web.rest;
 
-import com.eigenbaumarkt.test.RadiobuttonTestApp;
+import com.eigenbaumarkt.test.RadiobuttonsApp;
 import com.eigenbaumarkt.test.domain.User;
 import com.eigenbaumarkt.test.repository.UserRepository;
 import com.eigenbaumarkt.test.security.jwt.TokenProvider;
@@ -16,18 +16,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
+import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
-import static org.hamcrest.Matchers.nullValue;
-import static org.hamcrest.Matchers.isEmptyString;
-import static org.hamcrest.Matchers.not;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
  * Integration tests for the {@link UserJWTController} REST controller.
  */
-@SpringBootTest(classes = RadiobuttonTestApp.class)
+@SpringBootTest(classes = RadiobuttonsApp.class)
 public class UserJWTControllerIT {
 
     @Autowired

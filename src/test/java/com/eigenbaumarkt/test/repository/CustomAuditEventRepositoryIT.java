@@ -1,6 +1,6 @@
 package com.eigenbaumarkt.test.repository;
 
-import com.eigenbaumarkt.test.RadiobuttonTestApp;
+import com.eigenbaumarkt.test.RadiobuttonsApp;
 import com.eigenbaumarkt.test.config.Constants;
 import com.eigenbaumarkt.test.config.audit.AuditEventConverter;
 import com.eigenbaumarkt.test.domain.PersistentAuditEvent;
@@ -21,13 +21,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static com.eigenbaumarkt.test.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN_MAX_LENGTH;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = RadiobuttonTestApp.class)
+@SpringBootTest(classes = RadiobuttonsApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

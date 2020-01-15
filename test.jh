@@ -1,0 +1,13 @@
+entity Chooser {
+  enumeration Enums
+}
+
+enum Enums {
+  A,
+  B,
+  C,
+  D,
+  E
+}
+
+service Chooser with serviceImpl

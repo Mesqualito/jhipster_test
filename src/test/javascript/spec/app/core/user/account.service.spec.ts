@@ -1,13 +1,14 @@
 import { Router } from '@angular/router';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { JhiDateUtils } from 'ng-jhipster';
+import { JhiDateUtils, JhiLanguageService } from 'ng-jhipster';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 
 import { SERVER_API_URL } from 'app/app.constants';
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/user/account.model';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
+import { MockLanguageService } from '../../../helpers/mock-language.service';
 import { MockRouter } from '../../../helpers/mock-route.service';
 import { MockStateStorageService } from '../../../helpers/mock-state-storage.service';
 
@@ -36,6 +37,10 @@ describe('Service Tests', () => {
         imports: [HttpClientTestingModule, NgxWebstorageModule.forRoot()],
         providers: [
           JhiDateUtils,
+          {
+            provide: JhiLanguageService,
+            useClass: MockLanguageService
+          },
           {
             provide: StateStorageService,
             useClass: MockStateStorageService

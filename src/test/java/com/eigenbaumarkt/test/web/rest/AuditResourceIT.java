@@ -1,12 +1,11 @@
 package com.eigenbaumarkt.test.web.rest;
 
-import com.eigenbaumarkt.test.RadiobuttonTestApp;
-import io.github.jhipster.config.JHipsterProperties;
+import com.eigenbaumarkt.test.RadiobuttonsApp;
 import com.eigenbaumarkt.test.config.audit.AuditEventConverter;
 import com.eigenbaumarkt.test.domain.PersistentAuditEvent;
 import com.eigenbaumarkt.test.repository.PersistenceAuditEventRepository;
-
 import com.eigenbaumarkt.test.service.AuditEventService;
+import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -31,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link AuditResource} REST controller.
  */
-@SpringBootTest(classes = RadiobuttonTestApp.class)
+@SpringBootTest(classes = RadiobuttonsApp.class)
 @Transactional
 public class AuditResourceIT {
 
