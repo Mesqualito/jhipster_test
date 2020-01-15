@@ -1,0 +1,11 @@
+version: '2'
+services:
+  radiobutton_test-postgresql:
+    image: postgres:11.6
+    # volumes:
+    #     - ~/volumes/jhipster/radiobutton_test/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=radiobutton_test
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
