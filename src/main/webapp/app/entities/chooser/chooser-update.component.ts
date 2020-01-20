@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { FormArray, FormBuilder } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -15,10 +15,18 @@ import { ChooserService } from './chooser.service';
 export class ChooserUpdateComponent implements OnInit {
   isSaving = false;
 
-  editForm = this.fb.group({
+  private editForm = this.fb.group({
     id: [],
     enumeration: []
   });
+
+  formModel: FormGroup = new FormGroup({
+    editForms: new FormArray([this.editForm])
+  });
+
+  get editForms(): FormArray {
+    return this.formModel.get('editForms') as FormArray;
+  }
 
   constructor(protected chooserService: ChooserService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
 

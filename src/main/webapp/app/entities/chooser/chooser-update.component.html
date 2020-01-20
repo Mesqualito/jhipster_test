@@ -1,5 +1,8 @@
 <div class="row justify-content-center">
     <div class="col-8">
+
+        <!--
+
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
             <h2 id="jhi-chooser-heading" jhiTranslate="radiobuttonsApp.chooser.home.createOrEditLabel">Create or edit a
                 Chooser</h2>
@@ -10,24 +13,15 @@
                     <input type="text" class="form-control" id="id" name="id" formControlName="id"
                            readonly/>
                 </div>
-                <!--
-                                <div class="form-group">
-                                    <label class="form-control-label" jhiTranslate="radiobuttonsApp.chooser.enumeration" for="field_enumeration">Enumeration</label>
-                                    <select class="form-control" name="enumeration" formControlName="enumeration" id="field_enumeration">
-                                        <option value="A">{{'radiobuttonsApp.Enums.A' | translate}}</option>
-                                        <option value="B">{{'radiobuttonsApp.Enums.B' | translate}}</option>
-                                        <option value="C">{{'radiobuttonsApp.Enums.C' | translate}}</option>
-                                        <option value="D">{{'radiobuttonsApp.Enums.D' | translate}}</option>
-                                        <option value="E">{{'radiobuttonsApp.Enums.E' | translate}}</option>
-                                    </select>
-                                </div>
-                    -->
+
+                -->
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="formModel">
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="radiobuttonsApp.chooser.enumeration"
                            for="field_enumeration">Enumeration</label>
-                    <fieldset class="form-control" name="field_enumeration" id="field_enumeration">
-                        <div *ngFor="let enumeration of editForm.value">
-                            <input type="radio" formControlName="enumeration">
+                    <fieldset class="form-control" name="field_enumeration" id="field_enumeration" formArrayName="editForms">
+                        <div *ngFor="let editForm of editForms.controls; let i = index">
+                            <input type="radio" [value]="editForm[i].controls" formControlName="enumeration">&nbsp;{{'radiobuttonsApp.Enums.' + editForm[i].get('enumeration').value | translate}}
                         </div>
                         <!--
                         <input type="radio" value="A" formControlName="enumeration">{{'radiobuttonsApp.Enums.A' | translate}}</input>
@@ -39,7 +33,6 @@
                     </fieldset>
                 </div>
 
-            </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
                     <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
