@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { Chooser, IChooser } from 'app/shared/model/chooser.model';
 import { ChooserService } from './chooser.service';
+import { Enums } from 'app/shared/model/enumerations/enums.model';
 
 @Component({
   selector: 'jhi-chooser-update',
@@ -20,15 +20,12 @@ export class ChooserUpdateComponent implements OnInit {
     enumeration: []
   });
 
-  formModel: FormGroup = new FormGroup({
-    editForms: new FormArray([this.editForm])
-  });
-
-  get editForms(): FormArray {
-    return this.formModel.get('editForms') as FormArray;
-  }
-
-  constructor(protected chooserService: ChooserService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
+  constructor(
+    protected chooserService: ChooserService,
+    protected activatedRoute: ActivatedRoute,
+    private fb: FormBuilder,
+    private ChooserEnums: Enums
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ chooser }) => {
