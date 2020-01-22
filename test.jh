@@ -2,6 +2,8 @@ entity Chooser {
   enumeration Enums
 }
 
+// generates 'const enum' in Typescript (src/main/webapp/app/shared/model/enumerations/enums.model.ts)
+// see: https://www.typescriptlang.org/docs/handbook/enums.html ("completely inlined enums")
 enum Enums {
   A,
   B,
